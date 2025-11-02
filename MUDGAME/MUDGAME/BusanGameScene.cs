@@ -8,9 +8,12 @@ public class BusanGameScene : Scene
     ConsoleKey busanKey;
 
 
+    DiceGame busanDiceGamePlayer;
+    DiceGame busanDiceGameNPC;
 
-    string busanDiceGameNPCvalue;
-    string busanDiceGamePlayervalue;
+
+    int busanDiceGameNPCvalue = -2 ;
+    int busanDiceGamePlayervalue = -2;
 
     bool isWin;
 
@@ -21,42 +24,14 @@ public class BusanGameScene : Scene
     public BusanGameScene()
     {
 
-        DiceGame busanDiceGamePlayer = new DiceGame();
-        DiceGame busanDiceGameNPC = new DiceGame(); 
 
 
-        busanDiceGameNPCvalue = "null";
-        busanDiceGamePlayervalue = "null";
 
         isWin = false;
 
         busanDiceGameTextNum = 0;
 
 
-        busanCasinoText.Add("==== Busan Casino ====\r\n\n" +
-           " @@@ Insert Coin @@@ " +
-           "Press Enter key to start. \r\n\n." +
-            "=====================");
-
-
-        busanCasinoText.Add("==== Busan Casino ====\r\n\n" +
-            " NPC Turn" +
-            "Press Enter key to start. \r\n\n." +
-            "=====================");
-
-
-        busanCasinoText.Add("==== Busan Casino ====\r\n\n" +
-            " NPC Dice is " + busanDiceGameNPCvalue +
-            "\n\n Bet? \n\n" +
-            "Press Enter key to start. \r\n\n." +
-            "=====================");
-
-
-        busanCasinoText.Add("==== Busan Casino ====\r\n\n" +
-            " Your Dice is " + busanDiceGamePlayervalue + "\n\n" 
-            + isWin +
-            "\n\n Press Enter key to start. \r\n\n." +
-            "=====================");
 
     }
 
@@ -67,7 +42,16 @@ public class BusanGameScene : Scene
     public override void OnStart()
     {
 
-        Console.WriteLine(busanCasinoText[busanDiceGameTextNum]);
+
+        busanCasinoText.Add("==== Busan Casino ====\r\n\n" +
+           " @@@ Insert Coin @@@ " +
+           "Press Enter key to start. \r\n\n." +
+            "=====================");
+
+
+        Console.WriteLine(busanCasinoText[busanDiceGameTextNum % 4]);
+
+        busanDiceGameTextNum++;
 
     }
 
@@ -89,14 +73,86 @@ public class BusanGameScene : Scene
         }
         else if(busanKey == ConsoleKey.Enter)
         {
-            if (busanDiceGameTextNum < busanCasinoText.Count -1 )
+            
+            if (busanDiceGameTextNum != null )
             {
+
+                if(busanDiceGameTextNum % 4 == 0)
+                {
+
+
+                    busanCasinoText.Add("==== Busan Casino ====\r\n\n" +
+                       " @@@ Insert Coin @@@ " +
+                       "Press Enter key to start. \r\n\n." +
+                        "=====================");
+
+                }
+                else if (busanDiceGameTextNum % 4 == 1)
+                {
+
+
+                    busanDiceGamePlayer = new DiceGame();
+                    busanDiceGameNPC = new DiceGame();
+
+
+                    busanDiceGameNPCvalue = busanDiceGameNPC.Run();
+
+                    busanCasinoText.Add("==== Busan Casino ====\r\n\n" +
+                        " NPC Turn\n" +
+                        "Press Enter key to start. \r\n\n." +
+                        "=====================");
+
+                }
+                else if (busanDiceGameTextNum %4 == 2)
+                {
+                    busanDiceGamePlayervalue = busanDiceGamePlayer.Run();
+
+                    busanCasinoText.Add("==== Busan Casino ====\r\n\n" +
+                        " NPC Dice is " + busanDiceGameNPCvalue +
+                        "\n\n Bet? \n\n" +
+                        "Press Enter key to start. \r\n\n." +
+                        "=====================");
+
+                    if (busanDiceGamePlayervalue > busanDiceGameNPCvalue)
+                    {
+                        isWin = false;
+                    }
+                    else
+                    {
+                        isWin = true;
+                    }
+
+                }
+                else if (busanDiceGameTextNum % 4 == 3)
+                {
+                    busanCasinoText.Add("==== Busan Casino ====\r\n\n" +
+                    " Your Dice is " + busanDiceGamePlayervalue + "\n\n"
+                    + isWin +
+                    "\n\n Press Enter key to start. \r\n\n." +
+                    "=====================");
+
+                    busanDiceGameNPC = null;
+                    busanDiceGamePlayer = null;
+
+
+
+                }
+
+                Console.WriteLine(busanCasinoText[busanDiceGameTextNum]);
+
+
                 busanDiceGameTextNum++;
+
             }
+
+
+
+
+
+
         }
 
 
-        Console.WriteLine(busanCasinoText[busanDiceGameTextNum]);
 
 
         busanKey = ConsoleKey.Clear;
