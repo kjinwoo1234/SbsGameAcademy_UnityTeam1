@@ -66,6 +66,8 @@ public class BusanGameScene : Scene
     {
 
 
+        int busanTextNumTemp = 4;
+
 
         if (busanKey == ConsoleKey.Escape)
         {
@@ -77,7 +79,7 @@ public class BusanGameScene : Scene
             if (busanDiceGameTextNum != null )
             {
 
-                if(busanDiceGameTextNum % 4 == 0)
+                if(busanDiceGameTextNum % busanTextNumTemp == 0)
                 {
 
 
@@ -87,7 +89,7 @@ public class BusanGameScene : Scene
                         "=====================");
 
                 }
-                else if (busanDiceGameTextNum % 4 == 1)
+                else if (busanDiceGameTextNum % busanTextNumTemp == 1)
                 {
 
 
@@ -103,7 +105,7 @@ public class BusanGameScene : Scene
                         "=====================");
 
                 }
-                else if (busanDiceGameTextNum %4 == 2)
+                else if (busanDiceGameTextNum % busanTextNumTemp == 2)
                 {
                     busanDiceGamePlayervalue = busanDiceGamePlayer.Run();
 
@@ -123,7 +125,7 @@ public class BusanGameScene : Scene
                     }
 
                 }
-                else if (busanDiceGameTextNum % 4 == 3)
+                else if (busanDiceGameTextNum % busanTextNumTemp == 3)
                 {
                     busanCasinoText.Add("==== Busan Casino ====\r\n\n" +
                     " Your Dice is " + busanDiceGamePlayervalue + "\n\n"
