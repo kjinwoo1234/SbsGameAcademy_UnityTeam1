@@ -4,7 +4,7 @@
 namespace app2
 {
 
-    interface IObject
+    public interface IObject
     {
         void OnStart();
 
@@ -16,7 +16,7 @@ namespace app2
     }
 
 
-    class Scene : IObject
+    public class Scene : IObject
     {
         protected List<IObject> childObject = new List<IObject>();
         private Scene _nextScene = null;

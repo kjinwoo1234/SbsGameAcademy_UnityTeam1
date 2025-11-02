@@ -29,6 +29,8 @@ namespace app1
             ///
 
 
+            currentScene = new BusanGameScene();
+
             // 540x540 크기의 2차원 배열을 생성하고 0으로 초기화합니다.
             int[,] gameMap = new int[540, 540];
 
@@ -56,6 +58,7 @@ namespace app1
                     {
                         currentScene.OnKeyInput(key);
                     }
+
                     currentScene.Update();
                     currentScene.Render();
                     PressedKeySet.Clear();

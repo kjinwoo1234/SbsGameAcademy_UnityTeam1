@@ -42,7 +42,6 @@ class DiceGame
 
         return DicesRoll();
 
-
     }
 
     protected int DicesRoll()
