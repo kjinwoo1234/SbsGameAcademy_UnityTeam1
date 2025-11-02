@@ -47,20 +47,8 @@ namespace MUDGAME
                 Console.WriteLine("\n제로: “좋다... 이제 결판을 내자!”");
                 Console.ReadKey(true);
 
-                //FinalFight nextScene = new FinalFight();
-                //nextScene.Final_Fight();
-
-                //BadEnding nextScene = new BadEnding();
-                //nextScene.Bad_Ending();
-
-                //TrueEnding nextScene = new TrueEnding();
-                //nextScene.True_Ending();
-
-                //NormalEnding nextScene = new NormalEnding();
-                //nextScene.Normal_Ending();
-
-                HiddenEnding nextScene = new HiddenEnding();
-                nextScene.Hidden_Ending();
+                FinalFight nextScene = new FinalFight();
+                nextScene.Final_Fight();
             }
             else
             {
