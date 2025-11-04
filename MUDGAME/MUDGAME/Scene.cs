@@ -91,4 +91,28 @@ namespace app2
             ChangeScene(new TitleScene());
         }
     }
+    class FinalBattleScene : Scene
+    {
+
+        public FinalBattleScene()
+        {
+
+            Console.Write("==== Final Battle Scene ====\r\n\n" +
+               " @@@    $$$$    @@@ " +
+               "Press Enter key to start. \r\n\n." +
+                "=====================");
+        }
+    }
+    class BusanScene : Scene
+    {
+
+        public BusanScene()
+        {
+
+            Console.Write("==== Final Battle Scene ====\r\n\n" +
+               " @@@    $$$$    @@@ " +
+               "Press Enter key to start. \r\n\n." +
+                "=====================");
+        }
+    }
 }

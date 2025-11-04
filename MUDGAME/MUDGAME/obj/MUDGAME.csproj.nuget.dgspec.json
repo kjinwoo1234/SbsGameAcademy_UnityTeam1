@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mn051\\Desktop\\Unity\\SbsGameAcademy_UnityTeam1\\MUDGAME\\MUDGAME\\MUDGAME.csproj": {}
+    "C:\\Users\\mn051\\Documents\\GitHub\\SbsGameAcademy_UnityTeam1\\MUDGAME\\MUDGAME\\MUDGAME.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mn051\\Desktop\\Unity\\SbsGameAcademy_UnityTeam1\\MUDGAME\\MUDGAME\\MUDGAME.csproj": {
+    "C:\\Users\\mn051\\Documents\\GitHub\\SbsGameAcademy_UnityTeam1\\MUDGAME\\MUDGAME\\MUDGAME.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mn051\\Desktop\\Unity\\SbsGameAcademy_UnityTeam1\\MUDGAME\\MUDGAME\\MUDGAME.csproj",
+        "projectUniqueName": "C:\\Users\\mn051\\Documents\\GitHub\\SbsGameAcademy_UnityTeam1\\MUDGAME\\MUDGAME\\MUDGAME.csproj",
         "projectName": "MUDGAME",
-        "projectPath": "C:\\Users\\mn051\\Desktop\\Unity\\SbsGameAcademy_UnityTeam1\\MUDGAME\\MUDGAME\\MUDGAME.csproj",
+        "projectPath": "C:\\Users\\mn051\\Documents\\GitHub\\SbsGameAcademy_UnityTeam1\\MUDGAME\\MUDGAME\\MUDGAME.csproj",
         "packagesPath": "C:\\Users\\mn051\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mn051\\Desktop\\Unity\\SbsGameAcademy_UnityTeam1\\MUDGAME\\MUDGAME\\obj\\",
+        "outputPath": "C:\\Users\\mn051\\Documents\\GitHub\\SbsGameAcademy_UnityTeam1\\MUDGAME\\MUDGAME\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -42,9 +42,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
