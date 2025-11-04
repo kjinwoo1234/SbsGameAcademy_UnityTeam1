@@ -26,19 +26,15 @@ public class BusanStoreScene : Scene
 
         busanStoreText = new List<string>();
 
-
-
-
     }
 
 
     public override void OnStart()
     {
 
-
         busanStoreText.Add("==== Busan Store ====\r\n\n" +
-           " @@@    $$$$    @@@ " +
-           "Press Enter key to start. \r\n\n." +
+           " @@@    $$$$    @@@ \n" +
+           "Press Enter to Enter. \r\n\n." +
             "=====================");
 
 
@@ -61,21 +57,24 @@ public class BusanStoreScene : Scene
 
         if (busanStoreKey == ConsoleKey.Escape)
         {
-            ChangeScene(new PrologScene());
+            ChangeScene(new BusanScene());
         }
         else if ( busanStoreKey == ConsoleKey.Enter)
         {
+            if (busanStoreTextNum%2 == 0)
+            {
+                Console.WriteLine(busanStoreText[busanStoreTextNum % 1]);
+            }
+            else if (busanStoreTextNum % 2 == 1)
+            {
+                busanItemBox.ConsoleWrite();   // foreach로 아이템 이름/설명 출력
+            }
 
-            busanStoreText.Add("==== Busan Store ====\r\n\n" +
-             " @@@    $$$$    @@@ " +
-             busanItemBox.items +
-            "\nPress Enter key to start. \r\n\n." +
-                "=====================");
-
-
+            busanStoreTextNum++;
         }
 
 
+        busanStoreKey = ConsoleKey.Clear;
 
     }
 
@@ -87,17 +86,32 @@ public class ItemBox
 
     public List<item> items;
 
+    public item busanitem;
 
 
-	public ItemBox()
+
+    public ItemBox()
 	{
 
         items = new List<item>();
 
+        busanitem = new item(new string[] { "거울 주사위", "설명 : 거울 주사위이다." });
+
+        items.Add(busanitem);
+
     }
 
 
-
+    public void ConsoleWrite()
+    {
+        foreach (var item in items)
+        {
+            Console.WriteLine("===================");
+            Console.WriteLine(item.itemName[0]);
+            Console.WriteLine(item.itemName[1]);
+            Console.WriteLine("===================");
+        }
+    }
 }
 
 
@@ -105,21 +119,16 @@ public class ItemBox
 public class item
 {
 
-    List<string[]> itemName;
+    public string[] itemName;
 
 
 
-    public item()
+    public item(string[] itemDes)
     {
 
-        itemName = new List<string[]>();
-
-
+        
+        itemName = itemDes;
 
     }
-
-
-
-
 
 }
