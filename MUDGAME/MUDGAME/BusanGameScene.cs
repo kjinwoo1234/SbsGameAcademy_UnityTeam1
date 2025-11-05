@@ -24,14 +24,9 @@ public class BusanGameScene : Scene
     public BusanGameScene()
     {
 
-
-
-
         isWin = false;
 
         busanDiceGameTextNum = 0;
-
-
 
     }
 
@@ -82,7 +77,6 @@ public class BusanGameScene : Scene
                 if(busanDiceGameTextNum % busanTextNumTemp == 0)
                 {
 
-
                     busanCasinoText.Add("==== Busan Casino ====\r\n\n" +
                        " @@@ Insert Coin @@@ " +
                        "Press Enter key to start. \r\n\n." +
@@ -92,9 +86,9 @@ public class BusanGameScene : Scene
                 else if (busanDiceGameTextNum % busanTextNumTemp == 1)
                 {
 
-
                     busanDiceGamePlayer = new DiceGame();
                     busanDiceGameNPC = new DiceGame();
+
 
 
                     busanDiceGameNPCvalue = busanDiceGameNPC.Run();
@@ -105,15 +99,20 @@ public class BusanGameScene : Scene
                         "=====================");
 
                 }
-                else if (busanDiceGameTextNum % busanTextNumTemp == 2)
+                else if ( busanDiceGameTextNum % busanTextNumTemp == 2 )
                 {
                     busanDiceGamePlayervalue = busanDiceGamePlayer.Run();
 
+
+
                     busanCasinoText.Add("==== Busan Casino ====\r\n\n" +
-                        " NPC Dice is " + busanDiceGameNPCvalue +
+                        " NPC Dice is " + busanDiceGameNPC.diceIntToString[busanDiceGameNPCvalue] +
                         "\n\n Bet? \n\n" +
                         "Press Enter key to start. \r\n\n." +
                         "=====================");
+
+                    busanDiceGameNPC.DiceResultConsoleWrite();
+
 
                     if (busanDiceGamePlayervalue > busanDiceGameNPCvalue)
                     {
@@ -127,16 +126,17 @@ public class BusanGameScene : Scene
                 }
                 else if (busanDiceGameTextNum % busanTextNumTemp == 3)
                 {
+
                     busanCasinoText.Add("==== Busan Casino ====\r\n\n" +
-                    " Your Dice is " + busanDiceGamePlayervalue + "\n\n"
+                    " Your Dice is " + busanDiceGamePlayer.diceIntToString[busanDiceGamePlayervalue] + "\n\n"
                     + isWin +
                     "\n\n Press Enter key to start. \r\n\n." +
                     "=====================");
 
+                    busanDiceGamePlayer.DiceResultConsoleWrite();
+
                     busanDiceGameNPC = null;
                     busanDiceGamePlayer = null;
-
-
 
                 }
 

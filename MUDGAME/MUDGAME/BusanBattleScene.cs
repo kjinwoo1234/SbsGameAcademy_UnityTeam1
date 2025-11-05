@@ -12,8 +12,11 @@ public class BusanBattleScene : Scene
     DiceGame busanDiceGameNPC;
 
 
-    int busanDiceGameNPCvalue = -2;
-    int busanDiceGamePlayervalue = -2;
+    protected int busanDiceGameNPCvalue = -2;
+    protected int busanDiceGamePlayervalue = -2;
+
+    protected string busanDiceGameNPCvaueString = null;
+    protected string busanDiceGamePlayervalueString = null;
 
     bool isWin;
 
@@ -69,7 +72,7 @@ public class BusanBattleScene : Scene
                 {
 
 
-                    busanBattleText.Add("==== Busan Casino ====\r\n\n" +
+                    busanBattleText.Add("==== Busan Battle ====\r\n\n" +
                        " @@@ Insert Coin @@@ " +
                        "Press Enter key to start. \r\n\n." +
                         "=====================");
@@ -83,9 +86,12 @@ public class BusanBattleScene : Scene
                     busanDiceGameNPC = new DiceGame();
 
 
+
                     busanDiceGameNPCvalue = busanDiceGameNPC.Run();
 
-                    busanBattleText.Add("==== Busan Casino ====\r\n\n" +
+
+
+                    busanBattleText.Add("==== Busan Battle ====\r\n\n" +
                         " NPC Turn\n" +
                         "Press Enter key to start. \r\n\n." +
                         "=====================");
@@ -95,11 +101,16 @@ public class BusanBattleScene : Scene
                 {
                     busanDiceGamePlayervalue = busanDiceGamePlayer.Run();
 
-                    busanBattleText.Add("==== Busan Casino ====\r\n\n" +
-                        " NPC Dice is " + busanDiceGameNPCvalue +
+                    busanBattleText.Add("==== Busan Battle ====\r\n\n" +
+                        " NPC Dice is " + busanDiceGameNPC.diceIntToString[ busanDiceGameNPCvalue ]+
                         "\n\n Bet? \n\n" +
                         "Press Enter key to start. \r\n\n." +
                         "=====================");
+
+
+                    busanDiceGameNPC.DiceResultConsoleWrite();
+
+
 
                     if (busanDiceGamePlayervalue > busanDiceGameNPCvalue)
                     {
@@ -113,11 +124,41 @@ public class BusanBattleScene : Scene
                 }
                 else if (busanDiceGameTextNum % busanTextNumTemp == 3)
                 {
-                    busanBattleText.Add("==== Busan Casino ====\r\n\n" +
-                    " Your Dice is " + busanDiceGamePlayervalue + "\n\n"
+
+                    if (isWin == true)
+                    {
+                        busanBattleText.Add("==== Busan Battle ====\r\n\n" +
+                       " Your Dice is " + busanDiceGameNPC.diceIntToString[busanDiceGameNPCvalue] + "\n\n"
+                       + "You WIN\n\n" +
+                       "\n\n Press Enter key to start. \r\n\n." +
+                       "=====================");
+
+
+
+                        busanDiceGamePlayer.DiceResultConsoleWrite();
+
+
+
+                        Console.WriteLine(busanBattleText[busanDiceGameTextNum]);
+
+                        Thread.Sleep(5000);
+
+                        ChangeScene(new FinalBattleScene());
+                    }
+
+
+                    busanBattleText.Add("==== Busan Battle ====\r\n\n" +
+                    " Your Dice is " + busanDiceGameNPC.diceIntToString[busanDiceGameNPCvalue] + "\n\n"
                     + isWin +
-                    "\n\n Press Enter key to start. \r\n\n." +
+                    "\n\n Change to Next Scene. \r\n\n." +
                     "=====================");
+
+
+
+                    busanDiceGamePlayer.DiceResultConsoleWrite();
+
+
+
 
                     busanDiceGameNPC = null;
                     busanDiceGamePlayer = null;
@@ -128,11 +169,6 @@ public class BusanBattleScene : Scene
 
                 Console.WriteLine(busanBattleText[busanDiceGameTextNum]);
 
-
-                if (isWin == true)
-                {
-                    ChangeScene(new FinalBattleScene());
-                }
 
 
                 busanDiceGameTextNum++;
