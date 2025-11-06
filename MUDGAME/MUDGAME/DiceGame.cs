@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
 class DiceGame
 {
 
     public Dice[] Dices;
+
+    public string[] diceIntToString = { "","Yacht", "Four of Kind", "Full house", "big straight", "Top", "small straight", "Triple", "Two Pair", "Pair", "High Card" };
 
 
     public DiceGame()
@@ -41,7 +44,6 @@ class DiceGame
     {
 
         return DicesRoll();
-
 
     }
 
@@ -127,6 +129,24 @@ class DiceGame
 
 
         return -1;
+
+    }
+
+    public void  DiceResultConsoleWrite()
+    {
+        string[] DiceValues = new string[5];
+
+
+        for (int i = 0; i < DiceValues.Length; i++)
+        {
+
+            DiceValues[i] = Dices[i]._value.ToString();
+
+            Console.WriteLine("주사위 " + (i ) + " : " + DiceValues[i]);
+
+        }
+
+
 
     }
 
