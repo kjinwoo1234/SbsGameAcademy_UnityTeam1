@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MUDGAME")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7be51d36376fd5eb73b68f97093831da669f0be0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+077308f48faed3e5c6ab6270d547ebc7b4f626c3")]
 [assembly: System.Reflection.AssemblyProductAttribute("MUDGAME")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MUDGAME")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

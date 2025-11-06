@@ -2,6 +2,7 @@
 using System;
 using static System.Formats.Asn1.AsnWriter;
 using app2;
+using Class1;
 
 //// 맵에 간단한 패턴(테두리)을 그립니다.
 //for (int i = 0; i < 540; i++)
@@ -19,7 +20,7 @@ namespace app1
 {
     class MUDGAME
     {
-        static Scene currentScene = new TitleScene();
+        static Class1.Scene currentScene;
         static bool IsGameEnd = false;
 
         static void Main()
@@ -29,7 +30,7 @@ namespace app1
             ///
 
 
-            currentScene = new BusanBattleScene();
+            currentScene = new Class1.Scene0_TitleScene();
 
             // 540x540 크기의 2차원 배열을 생성하고 0으로 초기화합니다.
             int[,] gameMap = new int[540, 540];
