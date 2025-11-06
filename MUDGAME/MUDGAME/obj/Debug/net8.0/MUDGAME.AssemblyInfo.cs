@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MUDGAME")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< Updated upstream
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+087a5901dd3fdc72fd10d1c7defdd53c71b1f291")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d9f308e7fec34efa4d27a1762599c58f86795f9")]
+>>>>>>> Stashed changes
 [assembly: System.Reflection.AssemblyProductAttribute("MUDGAME")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MUDGAME")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
