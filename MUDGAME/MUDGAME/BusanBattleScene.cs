@@ -5,6 +5,7 @@ using Class1;
 
 public class BusanBattleScene : Class1.Scene
 {
+
     List<string> busanBattleText = new List<string>();
 
     ConsoleKey busanKey;
@@ -24,6 +25,7 @@ public class BusanBattleScene : Class1.Scene
 
     int busanDiceGameTextNum;
 
+
     public BusanBattleScene()
 	{
 
@@ -37,6 +39,7 @@ public class BusanBattleScene : Class1.Scene
 
     public override void OnStart()
     {
+
 
 
         busanBattleText.Add("==== Busan Battle ====\r\n\n" +
@@ -145,7 +148,7 @@ public class BusanBattleScene : Class1.Scene
 
                         Thread.Sleep(5000);
 
-                        ChangeScene(new FinalBattleScene());
+                        ChangeScene(new Scene0_TitleScene());
                     }
 
 

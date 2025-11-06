@@ -68,7 +68,7 @@ public class BusanGameScene : Class1.Scene
 
         if (busanKey == ConsoleKey.Escape)
         {
-            ChangeScene(new Scene0_TitleScene());
+            ChangeScene(new Scene2_BusanScene());
         }
         else if(busanKey == ConsoleKey.Enter)
         {
